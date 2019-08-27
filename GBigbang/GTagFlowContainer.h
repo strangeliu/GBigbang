@@ -11,19 +11,19 @@
 
 #define kGPopContainerHiddenKey @"kGPopContainerHiddenKey"
 
-typedef void(^GTagFlowActionBlock) (NSString *actionTitle,NSString*newText);
+typedef void(^GTagFlowActionBlock) (NSString *actionTitle, NSString*newText);
 
 @interface GTagFlowContainer : UIView
 
 /// actionBtn 点击block
-@property (nonatomic, copy) GTagFlowActionBlock  actionBlock;
-@property (nonatomic, strong) NSArray<NSString*> * actionBtnItems;
+@property (nonatomic, copy) GTagFlowActionBlock actionBlock;
+@property (nonatomic, strong) NSArray<NSString*> *actionBtnItems;
+@property (nonatomic, copy) void(^cancelBlock)(void);
 
-@property (nonatomic, strong,readonly) GTagFlowView * flowView;
+@property (nonatomic, strong, readonly) GTagFlowView *flowView;
 
-- (void)configDatas:(NSArray<GTagFlowItem*>*)flowDatas;
-- (void)show;
-- (void)hide;
+- (void)configDatas:(NSArray<GTagFlowItem *> *)flowDatas;
+
 @end
 
 

@@ -9,6 +9,8 @@
 #import "GCommentCell.h"
 #import "GBigbangBox.h"
 #import "GTagFlowContainer.h"
+#import "GBigbangViewController.h"
+
 typedef void(^GLabelBigBang) (NSString *text);
 @interface GLabel : UILabel
 @property (nonatomic, copy) GLabelBigBang bigbangBlock;
@@ -144,7 +146,11 @@ typedef void(^GLabelBigBang) (NSString *text);
     NSArray *items = [GBigbangBox bigBang:text];
     
     NSArray * layouts = [GTagFlowItem factoryFolwLayoutWithItems:items withAppearance:nil];
-    [self.container configDatas:layouts];
-    [self.container show];
+//    [self.container configDatas:layouts];
+//    [self.container show];
+    GBigbangViewController *controller = [[GBigbangViewController alloc] initWithItems:layouts];
+    controller.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [UIApplication.sharedApplication.keyWindow.rootViewController presentViewController:controller animated:true completion:nil];
 }
 @end

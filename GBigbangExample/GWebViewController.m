@@ -73,7 +73,6 @@
         }
     }];
     [self.container configDatas:flows.copy];
-    [self.container show];
     
 }
 
