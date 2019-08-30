@@ -10,6 +10,7 @@
 #import "GBigbangBox.h"
 #import "GTagFlowContainer.h"
 #import "GBigbangViewController.h"
+#import "GBigbangAction.h"
 
 typedef void(^GLabelBigBang) (NSString *text);
 @interface GLabel : UILabel
@@ -123,11 +124,6 @@ typedef void(^GLabelBigBang) (NSString *text);
         GTagFlowContainer *container = [GTagFlowContainer new];
         self.container = container;
         [self.container.flowView configTagCollectionViewLayout];
-        self.container.actionBtnItems = @[@"复制",@"举报",@"错别字"];
-//        __weak typeof(self) weakSelf = self;
-        self.container.actionBlock = ^(NSString *actionTitle, NSString *newText) {
-            NSLog(@"点击了 -- %@, 选择的文字 -- %@",actionTitle,newText);
-        };
     }
     return self;
 }
@@ -148,7 +144,10 @@ typedef void(^GLabelBigBang) (NSString *text);
     NSArray * layouts = [GTagFlowItem factoryFolwLayoutWithItems:items withAppearance:nil];
 //    [self.container configDatas:layouts];
 //    [self.container show];
-    GBigbangViewController *controller = [[GBigbangViewController alloc] initWithItems:layouts];
+    GBigbangAction *copy = [[GBigbangAction alloc] initWithTitle:@"copy" action:^(NSString * _Nonnull actionTitle, NSString * _Nonnull newText) {
+        
+    }];
+    GBigbangViewController *controller = [[GBigbangViewController alloc] initWithItems:layouts actions:@[copy]];
     controller.modalPresentationStyle = UIModalPresentationOverFullScreen;
     controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [UIApplication.sharedApplication.keyWindow.rootViewController presentViewController:controller animated:true completion:nil];

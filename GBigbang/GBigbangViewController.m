@@ -17,12 +17,13 @@
 
 @implementation GBigbangViewController
 
-- (instancetype)initWithItems:(NSArray<GTagFlowItem *> *)items {
+- (instancetype)initWithItems:(NSArray<GTagFlowItem *> *)items actions:(NSArray<GBigbangAction *> *)actions {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         self.modalPresentationStyle = UIModalPresentationOverFullScreen;
         self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         self.items = items;
+        self.actions = actions;
         self.containerView = [[GTagFlowContainer alloc] init];
     }
     return self;
@@ -36,6 +37,7 @@
     [super viewDidLoad];
     GTagFlowContainer *view = (GTagFlowContainer *)self.view;
     [view configDatas:self.items];
+    view.actions = self.actions;
     __weak typeof(self) weakSelf = self;
     view.cancelBlock = ^{
         [weakSelf dismissViewControllerAnimated:YES completion:nil];

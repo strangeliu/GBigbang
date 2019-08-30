@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GTagFlowView.h"
+#import "GBigbangAction.h"
 
 #define kGPopContainerHiddenKey @"kGPopContainerHiddenKey"
 
@@ -15,9 +16,7 @@ typedef void(^GTagFlowActionBlock) (NSString *actionTitle, NSString*newText);
 
 @interface GTagFlowContainer : UIView
 
-/// actionBtn 点击block
-@property (nonatomic, copy) GTagFlowActionBlock actionBlock;
-@property (nonatomic, strong) NSArray<NSString*> *actionBtnItems;
+@property (nonatomic, strong) NSArray<GBigbangAction *> *actions;
 @property (nonatomic, copy) void(^cancelBlock)(void);
 
 @property (nonatomic, strong, readonly) GTagFlowView *flowView;

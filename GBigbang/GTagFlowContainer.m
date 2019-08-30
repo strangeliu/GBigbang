@@ -16,7 +16,7 @@
 @property (nonatomic, strong) GTagFlowView *flowView;
 @property (nonatomic, strong) UIView *topContentView;
 @property (nonatomic, strong) UIButton *closeBtn;
-@property (nonatomic, assign) CGFloat  maxFlowViewHeight;
+@property (nonatomic, assign) CGFloat maxFlowViewHeight;
 
 @end
 
@@ -86,7 +86,6 @@
     [self addSubview:self.flowView];
     [self addSubview:self.closeBtn];
     [self addSubview:self.topContentView];
-    self.actionBtnItems = @[@"复制", @"", @"翻译", @"搜索", @"分享"];
 }
 
 - (UIButton *)createTopButton:(NSString*)title frame:(CGRect)rect {
@@ -111,18 +110,19 @@
 
 #pragma mark - public method
 
-- (void)setActionBtnItems:(NSArray<NSString *> *)actionBtnItems {
-    _actionBtnItems = actionBtnItems;
-    if (actionBtnItems.count > 0) {
+- (void)setActions:(NSArray<GBigbangAction *> *)actions {
+    _actions = actions;
+    if (actions.count > 0) {
         CGFloat totalWidth = 0;
         CGFloat padding = 10;
         CGFloat leftMargin = 10;
         [self.topContentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        for (NSInteger index = 0; index < actionBtnItems.count; index ++) {
-            NSString *title = actionBtnItems[index];
+        for (NSInteger index = 0; index < actions.count; index ++) {
+            NSString *title = actions[index].title;
             CGRect rect = CGRectMake(leftMargin + totalWidth + padding * index, 10, 0, 0);
             if (title.length > 0) {
                 UIButton *button = [self createTopButton:title frame:rect];
+                button.tag = 1000 + index;
                 [button sizeToFit];
                 totalWidth += button.bounds.size.width;
             }
@@ -157,20 +157,15 @@
     }
 }
 
-- (void)actionBtnClick:(UIButton*)btn {
+- (void)actionBtnClick:(UIButton*)button {
+    NSInteger index = button.tag - 1000;
     [self hide];
     NSString * text = [self.flowView getNewTextstring];
-    if ([btn.titleLabel.text isEqualToString:@"复制"]) {
-        [self copyText:text];
-    } else if ([btn.titleLabel.text isEqualToString:@"翻译"]) {
-        
-    } else if ([btn.titleLabel.text isEqualToString:@"搜索"]) {
-        
-    } else if ([btn.titleLabel.text isEqualToString:@"分享"]) {
-        
-    }
-    if (self.actionBlock) {
-        self.actionBlock(btn.titleLabel.text, text);
+    if (self.actions.count > index) {
+        GBigbangAction *action = self.actions[index];
+        if (action.action) {
+            action.action(button.titleLabel.text, text);
+        }
     }
 }
 

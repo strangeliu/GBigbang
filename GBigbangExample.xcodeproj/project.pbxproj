@@ -30,6 +30,7 @@
 		2BAB3D2E207CD30E008A6EBF /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAB3D2D207CD30E008A6EBF /* HistoryTableViewCell.m */; };
 		2BE82B8220B2EA3400E0608C /* GBigbangModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE82B8120B2EA3400E0608C /* GBigbangModel.m */; };
 		5AD57948230FFA49008B7263 /* GBigbangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD57947230FFA49008B7263 /* GBigbangViewController.m */; };
+		5AD581502318CB38008B7263 /* GBigbangAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD5814F2318CB38008B7263 /* GBigbangAction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		2BE82B8120B2EA3400E0608C /* GBigbangModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBigbangModel.m; sourceTree = "<group>"; };
 		5AD57946230FFA49008B7263 /* GBigbangViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBigbangViewController.h; sourceTree = "<group>"; };
 		5AD57947230FFA49008B7263 /* GBigbangViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBigbangViewController.m; sourceTree = "<group>"; };
+		5AD5814E2318CB38008B7263 /* GBigbangAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBigbangAction.h; sourceTree = "<group>"; };
+		5AD5814F2318CB38008B7263 /* GBigbangAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBigbangAction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +212,8 @@
 				2B71C48B2028319600A98235 /* NSArray+GBigbang.m */,
 				2B7D99F51F99EA50001A04CB /* GTagFlowView.h */,
 				2B7D99F61F99EA50001A04CB /* GTagFlowView.m */,
+				5AD5814E2318CB38008B7263 /* GBigbangAction.h */,
+				5AD5814F2318CB38008B7263 /* GBigbangAction.m */,
 				2B7D99FB1F99EC52001A04CB /* GTagFlowContainer.h */,
 				2B7D99FC1F99EC52001A04CB /* GTagFlowContainer.m */,
 				5AD57946230FFA49008B7263 /* GBigbangViewController.h */,
@@ -353,6 +358,7 @@
 				2B7D99BC1F99E389001A04CB /* ViewController.m in Sources */,
 				2B2A552F1F9E0B84007F5CCF /* GCommentCell.m in Sources */,
 				2BE82B8220B2EA3400E0608C /* GBigbangModel.m in Sources */,
+				5AD581502318CB38008B7263 /* GBigbangAction.m in Sources */,
 				2B772D191F9DA32400AB4A82 /* GPinHistoryViewController.m in Sources */,
 				2B7D99F71F99EA54001A04CB /* GBigbangBox.m in Sources */,
 				2B7D99F81F99EA63001A04CB /* GTagFlowCell.m in Sources */,

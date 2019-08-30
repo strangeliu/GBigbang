@@ -24,9 +24,6 @@
         GTagFlowContainer *container = [GTagFlowContainer new];
         self.container = container;
         __weak typeof(self) weakSelf = self;
-        self.container.actionBlock = ^(NSString *actionTitle, NSString *newText) {
-            [weakSelf clickTitle:actionTitle text:newText];
-        };
         [self configNewMenu];
     }
     return self;
