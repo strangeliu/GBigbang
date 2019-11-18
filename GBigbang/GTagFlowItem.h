@@ -9,16 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "GBigbangBox.h"
 @interface GTagFlowAppearance : NSObject
-@property (nonatomic, strong) UIColor * textColor;
-@property (nonatomic, strong) UIColor * backgroundColor;
-@property (nonatomic, strong) UIColor * selectBackgroundColor;
-@property (nonatomic, strong) UIColor * selectTextColor;
+@property (nonatomic, strong) UIColor *textColor;
+@property (nonatomic, strong) UIColor *backgroundColor;
+@property (nonatomic, strong) UIColor *selectBackgroundColor;
+@property (nonatomic, strong) UIColor *selectTextColor;
 
-@property (nonatomic, assign) CGFloat  borderWidth;
-@property (nonatomic, strong) UIColor * borderColor;
-@property (nonatomic, strong) UIColor * selectBorderColor;
+@property (nonatomic, assign) CGFloat borderWidth;
+@property (nonatomic, strong) UIColor *borderColor;
+@property (nonatomic, strong) UIColor *selectBorderColor;
 
-@property (nonatomic, strong) UIFont * textFont;
+@property (nonatomic, strong) UIFont *textFont;
 @property (nonatomic, assign) CGFloat  cornerRadius;
 
 @property (nonatomic, assign) CGFloat itemHeight;
@@ -27,13 +27,13 @@
 
 @interface GTagFlowItem : NSObject
 
-@property (nonatomic, strong) NSString * text;
+@property (nonatomic, strong) NSString *text;
 
-@property (nonatomic, assign) CGSize  itemSize;
+@property (nonatomic, assign) CGSize itemSize;
 
-@property (nonatomic, strong) GTagFlowAppearance * appearance;
+@property (nonatomic, strong) GTagFlowAppearance *appearance;
 
-@property (nonatomic, assign) BOOL  isSelected;
+@property (nonatomic, assign) BOOL isSelected;
 
 /**
  init Method
@@ -41,8 +41,8 @@
  @param text <#text description#>
  @return <#return value description#>
  */
-+ (instancetype)tagFlowItemWithText:(NSString*)text;
-+ (instancetype)tagFlowItemWithText:(NSString*)text withAppearance:(GTagFlowAppearance*)appearance;
++ (instancetype)tagFlowItemWithText:(NSString *)text;
++ (instancetype)tagFlowItemWithText:(NSString *)text withAppearance:(GTagFlowAppearance *)appearance;
 
 /**
  factory Method

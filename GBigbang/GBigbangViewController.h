@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong) NSArray<GTagFlowItem *> *items;
 @property (nonatomic, strong) NSArray<GBigbangAction *> *actions;
 
-- (instancetype)initWithItems:(NSArray<GTagFlowItem *> *)items actions:(NSArray<GBigbangAction *> *)actions; NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithItems:(NSArray<GTagFlowItem *> *)items actions:(NSArray<GBigbangAction *> *)actions NS_DESIGNATED_INITIALIZER;
 
 @end
 

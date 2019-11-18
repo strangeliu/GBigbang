@@ -147,9 +147,11 @@
 #pragma mark - private method
 
 - (void)closeContanier:(UIButton*)btn {
-    NSArray * array = [self.flowView filterAllSelectTitles];
-    if (array.count>0) {
-        [self.flowView.flowDatas makeObjectsPerformSelector:@selector(setIsSelected:) withObject:@(NO)];
+    NSArray *array = [self.flowView filterAllSelectTitles];
+    if (array.count > 0) {
+        for (GTagFlowItem *item in self.flowView.flowDatas) {
+            item.isSelected = false;
+        }
         self.topContentView.hidden = YES;
         [self.flowView reloadDatas];
     } else {
